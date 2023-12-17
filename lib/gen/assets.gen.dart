@@ -23,11 +23,14 @@ class $AssetsLauncherIconGen {
 class $AssetsThemesGen {
   const $AssetsThemesGen();
 
-  /// File path: assets/themes/theme.json
-  String get theme => 'assets/themes/theme.json';
+  /// File path: assets/themes/dark.json
+  String get dark => 'assets/themes/dark.json';
+
+  /// File path: assets/themes/light.json
+  String get light => 'assets/themes/light.json';
 
   /// List of all assets
-  List<String> get values => [theme];
+  List<String> get values => [dark, light];
 }
 
 class $AssetsTranslationsGen {
