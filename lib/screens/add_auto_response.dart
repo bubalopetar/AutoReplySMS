@@ -25,7 +25,6 @@ class _AddAutoResponseState extends ConsumerState<AddAutoResponse> {
   TextEditingController senderMessage = TextEditingController();
   TextEditingController receiverNumber = TextEditingController();
   TextEditingController receiverName = TextEditingController();
-
   TextEditingController receiverMessage = TextEditingController();
 
   String? checkIfEmpty(value) {
