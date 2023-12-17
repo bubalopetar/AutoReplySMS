@@ -15,11 +15,10 @@ void main() async {
 
   runApp(
     EasyLocalization(
-      saveLocale: true,
-      supportedLocales: const [Locales.english, Locales.croatia],
-      path: Locales.translationsPath,
-      fallbackLocale: Locales.english,
-      child: const ProviderScope(child: MyApp()),
-    ),
+        saveLocale: true,
+        supportedLocales: const [Locales.english, Locales.croatia],
+        path: Locales.translationsPath,
+        fallbackLocale: Locales.english,
+        child: const ProviderScope(child: MyApp())),
   );
 }
