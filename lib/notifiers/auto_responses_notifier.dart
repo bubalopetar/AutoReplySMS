@@ -6,13 +6,13 @@ import '../models/auto_response.dart';
 
 class AutoResponses extends ChangeNotifier {
   late List<AutoResponse> responses = [];
-  Prefs prefs = Prefs();
   late SmsHelper smsHelper;
+  Prefs prefs = Prefs();
+
   AutoResponses() {
     prefs.init();
     getResponsesFromPrefs();
-    smsHelper = SmsHelper(responses);
-    smsHelper.setBackgroundListener();
+    smsHelper = SmsHelper(responses)..setBackgroundListener();
   }
   void getResponsesFromPrefs() {
     for (var key in prefs.getKeys()) {
