@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 
 import '../models/auto_response.dart';
 
-class AutoResponsesNotifier extends ChangeNotifier {
+class AutoResponses extends ChangeNotifier {
   late List<AutoResponse> responses = [];
   Prefs prefs = Prefs();
   late SmsHelper smsHelper;
-  AutoResponsesNotifier() {
+  AutoResponses() {
     prefs.init();
     getResponsesFromPrefs();
     smsHelper = SmsHelper(responses);

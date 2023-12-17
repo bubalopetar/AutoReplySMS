@@ -29,7 +29,7 @@ class AutoResponseListView extends ConsumerWidget {
   }
 
   ListView _buildListView(
-      List<AutoResponse> responses, AutoResponsesNotifier responsesProvider) {
+      List<AutoResponse> responses, AutoResponses responsesProvider) {
     return ListView.builder(
       itemCount: responses.length,
       itemBuilder: (context, index) => Column(
