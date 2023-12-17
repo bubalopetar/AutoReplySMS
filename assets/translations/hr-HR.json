@@ -1,0 +1,14 @@
+{
+    "title":"AutoRespondeSMS",
+    "sender":"Kad primim SMS sa broja",
+    "senderHint":"Broj pošiljatelja",
+    "senderMessage":"Ako sadrži frazu",
+    "senderMessageHint":"Fraza koju treba sadržavati",
+    "receiver": "Pošalji prema",
+    "receiverHint":"Broj primatelja",
+    "receiverMessage": "Poruka koju želite poslati",
+    "emptyError": "Polje ne smije biti prazno",
+    "save":"Spremi",
+    "saveSuccess":"Novi unos je uspješno spremljen!",
+    "listEmpty": "Nema unosa, pritisnite + za dodati"
+}

@@ -1,0 +1,14 @@
+{
+    "title":"AutoRespondeSMS",
+    "sender":"When I receive SMS from number",
+    "senderHint":"Sender phone number",
+    "senderMessage":"If it contains phrase",
+    "senderMessageHint":"Specific phrase message should contain or leave empty",
+    "receiver": "Send to",
+    "receiverHint":"Phone number",
+    "receiverMessage": "Message you want to send",
+    "emptyError": "Value should not be empty!",
+    "save":"Save",
+    "saveSuccess":"New item is saved successfully!",
+    "listEmpty": "There are no items yet, press + to add"
+}

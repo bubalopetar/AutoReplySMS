@@ -1,0 +1,11 @@
+flavors:
+  debuging:
+    app:
+      name: "AutoRespondeSMS Debug"
+    android:
+        applicationId: "com.autoRespondeSMS.debuging"
+  production:
+    app:
+      name: "Auto Responde SMS"
+    android:
+        applicationId: "com.autoRespondeSMS.production"
