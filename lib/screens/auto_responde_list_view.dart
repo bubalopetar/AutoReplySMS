@@ -103,7 +103,8 @@ class AutoResponseListView extends ConsumerWidget {
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      title: const Text(LocaleKeys.title).tr(),
+      title: FittedBox(
+          fit: BoxFit.scaleDown, child: const Text(LocaleKeys.title).tr()),
       actions: [
         IconButton(
             onPressed: () =>

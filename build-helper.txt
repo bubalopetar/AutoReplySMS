@@ -1,0 +1,1 @@
+fvm flutter build apk --release --flavor production -t lib/flavors/main_production.dart --obfuscate --split-debug-info=debug_info --no-tree-shake-icons
