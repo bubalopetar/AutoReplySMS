@@ -11,12 +11,11 @@ class F {
   static String get title {
     switch (appFlavor) {
       case Flavor.debuging:
-        return 'AutoRespondeSMS Debug';
+        return 'AutoReplySMS Debug';
       case Flavor.production:
-        return 'Auto Responde SMS';
+        return 'Auto Reply SMS';
       default:
         return 'title';
     }
   }
-
 }

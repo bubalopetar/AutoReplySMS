@@ -1,11 +1,11 @@
 flavors:
   debuging:
     app:
-      name: "AutoRespondeSMS Debug"
+      name: "AutoReplySMS Debug"
     android:
-        applicationId: "com.autoRespondeSMS.debuging"
+        applicationId: "com.autoReplySMS.debuging"
   production:
     app:
-      name: "Auto Responde SMS"
+      name: "Auto Reply SMS"
     android:
-        applicationId: "com.autoRespondeSMS.production"
+        applicationId: "com.autoReplySMS.production"

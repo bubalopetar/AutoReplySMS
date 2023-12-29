@@ -8,16 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercontactpicker/fluttercontactpicker.dart';
 
-class AddAutoResponse extends ConsumerStatefulWidget {
-  const AddAutoResponse({super.key});
+class AddAutoReply extends ConsumerStatefulWidget {
+  const AddAutoReply({super.key});
 
   static const routeName = 'add';
 
   @override
-  ConsumerState<AddAutoResponse> createState() => _AddAutoResponseState();
+  ConsumerState<AddAutoReply> createState() => _AddAutoResponseState();
 }
 
-class _AddAutoResponseState extends ConsumerState<AddAutoResponse> {
+class _AddAutoResponseState extends ConsumerState<AddAutoReply> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   TextEditingController senderNumber = TextEditingController();

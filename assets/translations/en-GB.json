@@ -1,5 +1,5 @@
 {
-    "title":"AutoRespondeSMS",
+    "title":"AutoReplySMS",
     "sender":"When I receive SMS from number",
     "senderHint":"Sender phone number",
     "senderMessage":"If it contains phrase",

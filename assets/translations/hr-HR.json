@@ -1,5 +1,5 @@
 {
-    "title":"AutoRespondeSMS",
+    "title":"AutoReplySMS",
     "sender":"Kad primim SMS sa broja",
     "senderHint":"Broj pošiljatelja",
     "senderMessage":"Ako sadrži frazu",

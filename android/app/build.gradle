@@ -39,13 +39,13 @@ android {
     productFlavors {
         debuging {
             dimension "flavor-type"
-            applicationId "com.autoRespondeSMS.debuging"
-            resValue "string", "app_name", "AutoRespondeSMS Debug"
+            applicationId "com.autoReplySMS.debuging"
+            resValue "string", "app_name", "AutoReplySMS Debug"
         }
         production {
             dimension "flavor-type"
-            applicationId "com.autoRespondeSMS.production"
-            resValue "string", "app_name", "Auto Responde SMS"
+            applicationId "com.autoReplySMS.production"
+            resValue "string", "app_name", "Auto Reply SMS"
         }
     }
 

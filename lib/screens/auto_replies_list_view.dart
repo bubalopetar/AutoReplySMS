@@ -1,6 +1,6 @@
 import 'package:app/notifiers/auto_responses_notifier.dart';
 import 'package:app/models/auto_response.dart';
-import 'package:app/screens/add_auto_response.dart';
+import 'package:app/screens/add_auto_reply.dart';
 import 'package:app/providers/providers.dart';
 import 'package:app/utils/locales.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -10,8 +10,8 @@ import 'package:country_flags/country_flags.dart';
 
 import '../generated/locale_keys.g.dart';
 
-class AutoResponseListView extends ConsumerWidget {
-  const AutoResponseListView({super.key});
+class AutoRepliesListView extends ConsumerWidget {
+  const AutoRepliesListView({super.key});
   static const routeName = '/';
 
   @override
@@ -108,7 +108,7 @@ class AutoResponseListView extends ConsumerWidget {
       actions: [
         IconButton(
             onPressed: () =>
-                Navigator.of(context).pushNamed(AddAutoResponse.routeName),
+                Navigator.of(context).pushNamed(AddAutoReply.routeName),
             icon: const Icon(Icons.add))
       ],
     );
