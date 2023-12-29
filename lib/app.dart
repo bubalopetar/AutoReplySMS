@@ -15,7 +15,7 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: F.appFlavor == Flavor.debuging,
       theme: ref.watch(settingsProvider).theme,
       routes: {
-        AutoRepliesListView.routeName: (context) => const AutoRepliesListView(),
+        AutoRepliesListView.routeName: (context) => AutoRepliesListView(),
         AddAutoReply.routeName: (context) => const AddAutoReply()
       },
       localizationsDelegates: context.localizationDelegates,
