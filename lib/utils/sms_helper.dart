@@ -1,18 +1,20 @@
+import 'dart:convert';
+
 import 'package:app/utils/prefs.dart';
 import 'package:telephony/telephony.dart';
 
-import '../models/auto_response.dart';
+import '../models/auto_reply.dart';
 
 class SmsHelper {
   late Telephony telephony;
-  late List<AutoResponse> responses = [];
+  late List<AutoReply> responses = [];
 
   SmsHelper(this.responses) {
     telephony = Telephony.instance;
     askPermissions();
   }
 
-  set setResponses(List<AutoResponse> responses) {
+  set setResponses(List<AutoReply> responses) {
     this.responses = responses;
   }
 
@@ -48,9 +50,9 @@ void backgroundMessageHandler(SmsMessage message) async {
   Prefs prefs = Prefs();
   await prefs.init();
 
-  List<AutoResponse> responses = [];
+  List<AutoReply> responses = [];
   for (var key in prefs.getKeys()) {
-    responses.add(AutoResponse.fromJson(prefs.getString(key)));
+    responses.add(AutoReply.fromJson(jsonDecode(prefs.getString(key))));
   }
 
   var telephony = Telephony.instance;

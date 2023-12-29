@@ -1,28 +1,37 @@
+import 'dart:convert';
+
 import 'package:app/utils/prefs.dart';
 import 'package:app/utils/sms_helper.dart';
-import 'package:flutter/material.dart';
 
-import '../models/auto_response.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import '../models/auto_reply.dart';
 
-class AutoResponses extends ChangeNotifier {
-  late List<AutoResponse> responses = [];
+part 'auto_replies_notifier.g.dart';
+
+@riverpod
+class AutoReplies extends _$AutoReplies {
   late SmsHelper smsHelper;
   Prefs prefs = Prefs();
 
-  AutoResponses() {
+  @override
+  List<AutoReply> build() {
+    state = [];
     prefs.init();
     getResponsesFromPrefs();
-    smsHelper = SmsHelper(responses)..setBackgroundListener();
+    smsHelper = SmsHelper(state)..setBackgroundListener();
+    return getResponsesFromPrefs();
   }
-  void getResponsesFromPrefs() {
+
+  List<AutoReply> getResponsesFromPrefs() {
+    List<AutoReply> replies = [];
     for (var key in prefs.getKeys()) {
       if (key == 'locale') {
         continue;
       }
-      responses.add(AutoResponse.fromJson(prefs.getString(key)));
+      replies.add(AutoReply.fromJson(jsonDecode(prefs.getString(key))));
     }
-    notifyListeners();
-    return;
+
+    return replies;
   }
 
   Future<void> createAutoResponseAndSaveToPrefs({
@@ -34,7 +43,7 @@ class AutoResponses extends ChangeNotifier {
     required String receiverMessage,
   }) async {
     String id = DateTime.now().toIso8601String();
-    var newResponse = AutoResponse(
+    var newResponse = AutoReply(
         id: id,
         senderName: senderName,
         senderNumber: senderNumber,
@@ -42,14 +51,12 @@ class AutoResponses extends ChangeNotifier {
         receiverNumber: receiverNumber,
         receiverName: receiverName,
         receiverMessage: receiverMessage);
-    await prefs.setString(id, newResponse.toJson());
-    responses.add(newResponse);
-    notifyListeners();
+    await prefs.setString(id, jsonEncode(newResponse.toJson()));
+    state = [...state, newResponse];
   }
 
   void deleteResponse(String id) {
-    responses.removeWhere((element) => element.id == id);
+    state = state.where((AutoReply element) => element.id != id).toList();
     prefs.clearPreference(id);
-    notifyListeners();
   }
 }

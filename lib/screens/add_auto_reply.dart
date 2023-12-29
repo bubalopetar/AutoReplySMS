@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously, must_be_immutable
 
 import 'package:app/generated/locale_keys.g.dart';
-import 'package:app/providers/providers.dart';
+import 'package:app/notifiers/auto_replies_notifier.dart';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -78,7 +78,7 @@ class _AddAutoResponseState extends ConsumerState<AddAutoReply> {
           if (_formKey.currentState!.validate()) {
             _formKey.currentState!.save();
             await ref
-                .read(autoResponsesProvider)
+                .read(autoRepliesProvider.notifier)
                 .createAutoResponseAndSaveToPrefs(
                     senderName: senderName.text,
                     senderMessage: senderMessage.text,

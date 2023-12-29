@@ -12,12 +12,16 @@ import 'package:flutter/widgets.dart';
 class $AssetsLauncherIconGen {
   const $AssetsLauncherIconGen();
 
-  /// File path: assets/launcher_icon/launcher_icon.png
-  AssetGenImage get launcherIcon =>
-      const AssetGenImage('assets/launcher_icon/launcher_icon.png');
+  /// File path: assets/launcher_icon/dark.png
+  AssetGenImage get dark =>
+      const AssetGenImage('assets/launcher_icon/dark.png');
+
+  /// File path: assets/launcher_icon/light.png
+  AssetGenImage get light =>
+      const AssetGenImage('assets/launcher_icon/light.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [launcherIcon];
+  List<AssetGenImage> get values => [dark, light];
 }
 
 class $AssetsThemesGen {

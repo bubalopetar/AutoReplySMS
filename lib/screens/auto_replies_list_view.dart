@@ -1,7 +1,8 @@
-import 'package:app/notifiers/auto_responses_notifier.dart';
-import 'package:app/models/auto_response.dart';
+// ignore_for_file: must_be_immutable
+
+import 'package:app/notifiers/auto_replies_notifier.dart';
+import 'package:app/models/auto_reply.dart';
 import 'package:app/screens/add_auto_reply.dart';
-import 'package:app/providers/providers.dart';
 import 'package:app/utils/locales.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -11,25 +12,27 @@ import 'package:country_flags/country_flags.dart';
 import '../generated/locale_keys.g.dart';
 
 class AutoRepliesListView extends ConsumerWidget {
-  const AutoRepliesListView({super.key});
+  AutoRepliesListView({super.key});
   static const routeName = '/';
+
+  late List<AutoReply> responses;
+  late AutoReplies responsesProvider;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    var responsesProvider = ref.watch(autoResponsesProvider);
-    var responses = responsesProvider.responses;
+    responsesProvider = ref.read(autoRepliesProvider.notifier);
+    responses = ref.watch(autoRepliesProvider);
 
     return Scaffold(
       drawer: SafeArea(child: _buildDrawer(context)),
       appBar: _buildAppBar(context),
       body: responses.isEmpty
           ? Center(child: const Text(LocaleKeys.listEmpty).tr())
-          : _buildListView(responses, responsesProvider),
+          : _buildListView(),
     );
   }
 
-  ListView _buildListView(
-      List<AutoResponse> responses, AutoResponses responsesProvider) {
+  ListView _buildListView() {
     return ListView.builder(
       itemCount: responses.length,
       itemBuilder: (context, index) => Column(
