@@ -6,7 +6,7 @@ part of 'auto_replies_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$autoRepliesHash() => r'f3b2156a3e9eed44ccbf2f38dd41eede5701969a';
+String _$autoRepliesHash() => r'cde405cfa4d33b6d0bed4cd435299f3a115be101';
 
 /// See also [AutoReplies].
 @ProviderFor(AutoReplies)

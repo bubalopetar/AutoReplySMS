@@ -15,11 +15,10 @@ class AutoReplies extends _$AutoReplies {
 
   @override
   List<AutoReply> build() {
-    state = [];
+    state = getResponsesFromPrefs();
     prefs.init();
-    getResponsesFromPrefs();
     smsHelper = SmsHelper(state)..setBackgroundListener();
-    return getResponsesFromPrefs();
+    return state;
   }
 
   List<AutoReply> getResponsesFromPrefs() {
