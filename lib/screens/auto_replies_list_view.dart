@@ -8,12 +8,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:country_flags/country_flags.dart';
+import 'package:go_router/go_router.dart';
 
 import '../generated/locale_keys.g.dart';
 
 class AutoRepliesListView extends ConsumerWidget {
   AutoRepliesListView({super.key});
-  static const routeName = '/';
+  static const routePath = '/';
+  static const routeName = 'home';
 
   late List<AutoReply> responses;
   late AutoReplies responsesProvider;
@@ -110,8 +112,7 @@ class AutoRepliesListView extends ConsumerWidget {
           fit: BoxFit.scaleDown, child: const Text(LocaleKeys.title).tr()),
       actions: [
         IconButton(
-            onPressed: () =>
-                Navigator.of(context).pushNamed(AddAutoReply.routeName),
+            onPressed: () => context.goNamed(AddAutoReply.routeName),
             icon: const Icon(Icons.add))
       ],
     );
