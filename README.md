@@ -10,5 +10,5 @@ AutoReplySMS is a user-friendly Flutter application designed to streamline and a
  - Deleting reply is also possible
  - Multilingual support
 
-<a href="url"><img src="readme_img\1.jpeg" align="left" height="480" width="" ></a>
-<a href="url"><img src="readme_img\2.jpg" align="left" height="480" width="" ></a>
+<a href="url"><img src="readme_img\1.png" align="left" height="480" width="" ></a>
+<a href="url"><img src="readme_img\2.png" align="left" height="480" width="" ></a>
