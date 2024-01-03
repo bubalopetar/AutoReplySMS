@@ -3,6 +3,7 @@
 
 AutoReplySMS is a user-friendly Flutter application designed to streamline and automate your text messaging experience. This innovative app empowers users by automatically responding to incoming SMS messages, allowing you to stay connected without the need for constant manual replies. 
 
+App currenctly only works on Android devices because of platform limitations
 
 ## Features
  - You can create new SMS reply
