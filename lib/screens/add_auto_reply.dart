@@ -12,6 +12,7 @@ class AddAutoReply extends ConsumerStatefulWidget {
   const AddAutoReply({super.key});
 
   static const routeName = 'add';
+  static const routePath = 'add';
 
   @override
   ConsumerState<AddAutoReply> createState() => _AddAutoResponseState();
